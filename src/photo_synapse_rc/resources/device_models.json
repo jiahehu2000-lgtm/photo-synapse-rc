@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "models": {
+    "LIGHT": {
+      "kind": "linear3",
+      "tau_s": [
+        0.08638070691928003,
+        0.8032903084305304,
+        6.301201267369912
+      ],
+      "gain_nA": [
+        1.259917290292193,
+        0.2122369073575212,
+        0.027746611085924855
+      ]
+    },
+    "DARK": {
+      "kind": "linear3",
+      "tau_s": [
+        0.10818938822269983,
+        1.3848129005402599,
+        10.97897239282255
+      ],
+      "gain_nA": [
+        0.6808561750971406,
+        0.042225804906512114,
+        0.00558970130419207
+      ]
+    }
+  },
+  "provenance": [
+    {
+      "condition": "LIGHT",
+      "source_artifact": "LIGHT_matched_objective.json",
+      "source_sha256": "dacab9a52ddee0c89b15bffd3b2f2594cbfa97246de747e1931d4c52efce5c20",
+      "calibration_kind": "EPSC and pulse-train effective response; no action-label fitting"
+    },
+    {
+      "condition": "DARK",
+      "source_artifact": "DARK_all.json",
+      "source_sha256": "e79ec9cc4117edb252aba1b85bbaa08d2631140d061d7fafa03ae5a3f046b55a",
+      "calibration_kind": "EPSC and pulse-train effective response; no action-label fitting"
+    }
+  ],
+  "slot_s": 0.13906,
+  "delay_s": 0.07416,
+  "ADC_bits": 2,
+  "ADC_fullscale_nA": 3,
+  "branches": 150,
+  "reads": 40,
+  "features": 6000
+}

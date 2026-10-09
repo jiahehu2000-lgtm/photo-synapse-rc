@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "photo-synapse-rc"
+version = "0.1.0"
+description = "Device-calibrated photo/dark reservoir simulation with Chinese reproducibility documentation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Jiahe Hu"}]
+dependencies = ["numpy>=2.3,<3", "scipy>=1.15,<2", "scikit-learn>=1.7,<1.8", "threadpoolctl>=3.6,<4"]
+
+[project.urls]
+Repository = "https://github.com/jiahehu2000-lgtm/photo-synapse-rc"
+
+[project.scripts]
+photo-synapse-rc = "photo_synapse_rc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+photo_synapse_rc = ["resources/*.json"]

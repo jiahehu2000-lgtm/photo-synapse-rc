@@ -1,0 +1,55 @@
+{
+  "protocol": "Frozen 2026-10-03 readout comparison; portable extraction 2026-10-09",
+  "source_scripts": [
+    {
+      "file": "run_public_readout_comparison.py",
+      "sha256": "23b10be61a61fe18d6424559a9b1cb6d4f17577b690ac8e4b40cb8210ae0a5fb"
+    },
+    {
+      "file": "run_complete_paired_rc.py",
+      "sha256": "e5f33041bb4493b31600f4f68251ebee3598adddd8335f3dd605146c41aeb2db"
+    },
+    {
+      "file": "frozen_benchmark.py",
+      "sha256": "ff5e42fe89614d336eef798344d3ececd5be0671f4865af46b155322faa7af24"
+    }
+  ],
+  "model_sources": [
+    {
+      "condition": "LIGHT",
+      "source_artifact": "LIGHT_matched_objective.json",
+      "source_sha256": "dacab9a52ddee0c89b15bffd3b2f2594cbfa97246de747e1931d4c52efce5c20",
+      "calibration_kind": "EPSC and pulse-train effective response; no action-label fitting"
+    },
+    {
+      "condition": "DARK",
+      "source_artifact": "DARK_all.json",
+      "source_sha256": "e79ec9cc4117edb252aba1b85bbaa08d2631140d061d7fafa03ae5a3f046b55a",
+      "calibration_kind": "EPSC and pulse-train effective response; no action-label fitting"
+    }
+  ],
+  "public_index_source_sha256": "bdea375abe3c8499887b71e439f547643bb11a8fbb20f807491790440bb49f32",
+  "deployment": [
+    {
+      "file": "models/LIGHT_softmax_public319.npz",
+      "sha256": "627a3ddda6b668cbed1401075b3613939207644541b3e7501b67e38751905c10",
+      "bytes": 430698,
+      "C": 1,
+      "public_training_records": 319,
+      "personal_training_records": 0,
+      "features": 6000,
+      "classes": 10
+    },
+    {
+      "file": "models/DARK_softmax_public319.npz",
+      "sha256": "2688659e516ed5a921f574674341a28d97ff114156b7f78dca005af08d56e0d2",
+      "bytes": 373450,
+      "C": 0.0001,
+      "public_training_records": 319,
+      "personal_training_records": 0,
+      "features": 6000,
+      "classes": 10
+    }
+  ],
+  "raw_recordings_redistributed": false
+}

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+outputs/
+_validation/
+.pytest_cache/
+.env
+*.log
+# Source recordings are external; checked-in manifests contain only public IDs.
+*.mat
+*.zip
+*.csv.gz
+private_data/

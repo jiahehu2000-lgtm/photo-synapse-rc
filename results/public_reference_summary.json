@@ -1,0 +1,158 @@
+{
+  "summary": [
+    {
+      "classifier": "RIDGE",
+      "condition": "LIGHT",
+      "subject_mean_accuracy_pct": 89.00641025641025,
+      "subject_sd_accuracy_pct": 6.737786329985084,
+      "subject_mean_macro_f1_pct": 87.27714646464648,
+      "pooled_correct": 284,
+      "records": 319,
+      "pooled_accuracy_pct": 89.0282131661442,
+      "pooled_macro_f1_pct": 88.80907474520811,
+      "phone_training_records": 0,
+      "features": 6000
+    },
+    {
+      "classifier": "RIDGE",
+      "condition": "DARK",
+      "subject_mean_accuracy_pct": 66.14583333333333,
+      "subject_sd_accuracy_pct": 8.64807415023348,
+      "subject_mean_macro_f1_pct": 64.18496780996782,
+      "pooled_correct": 211,
+      "records": 319,
+      "pooled_accuracy_pct": 66.14420062695925,
+      "pooled_macro_f1_pct": 66.32395743474704,
+      "phone_training_records": 0,
+      "features": 6000
+    },
+    {
+      "classifier": "LINEAR_SVM",
+      "condition": "LIGHT",
+      "subject_mean_accuracy_pct": 88.07692307692308,
+      "subject_sd_accuracy_pct": 5.337311843771821,
+      "subject_mean_macro_f1_pct": 87.14718614718615,
+      "pooled_correct": 281,
+      "records": 319,
+      "pooled_accuracy_pct": 88.08777429467085,
+      "pooled_macro_f1_pct": 87.92376442484438,
+      "phone_training_records": 0,
+      "features": 6000
+    },
+    {
+      "classifier": "LINEAR_SVM",
+      "condition": "DARK",
+      "subject_mean_accuracy_pct": 68.33333333333333,
+      "subject_sd_accuracy_pct": 8.030200930495264,
+      "subject_mean_macro_f1_pct": 66.14450133200133,
+      "pooled_correct": 218,
+      "records": 319,
+      "pooled_accuracy_pct": 68.3385579937304,
+      "pooled_macro_f1_pct": 68.11699611631175,
+      "phone_training_records": 0,
+      "features": 6000
+    },
+    {
+      "classifier": "LINEAR_SOFTMAX",
+      "condition": "LIGHT",
+      "subject_mean_accuracy_pct": 89.94391025641025,
+      "subject_sd_accuracy_pct": 7.386347914067868,
+      "subject_mean_macro_f1_pct": 89.04403235653236,
+      "pooled_correct": 287,
+      "records": 319,
+      "pooled_accuracy_pct": 89.96865203761756,
+      "pooled_macro_f1_pct": 89.89587115322382,
+      "phone_training_records": 0,
+      "features": 6000
+    },
+    {
+      "classifier": "LINEAR_SOFTMAX",
+      "condition": "DARK",
+      "subject_mean_accuracy_pct": 65.52083333333333,
+      "subject_sd_accuracy_pct": 9.959615876764445,
+      "subject_mean_macro_f1_pct": 63.06628094128094,
+      "pooled_correct": 209,
+      "records": 319,
+      "pooled_accuracy_pct": 65.51724137931035,
+      "pooled_macro_f1_pct": 65.80750102696537,
+      "phone_training_records": 0,
+      "features": 6000
+    }
+  ],
+  "paired_comparison": [
+    {
+      "分类器": "岭回归",
+      "光照准确率_逐人平均_pct": 89.00641025641025,
+      "暗态准确率_逐人平均_pct": 66.14583333333333,
+      "光暗差值_百分点": 22.86057692307692,
+      "光照正确条数": 284,
+      "暗态正确条数": 211,
+      "总测试条数": 319
+    },
+    {
+      "分类器": "线性SVM",
+      "光照准确率_逐人平均_pct": 88.07692307692308,
+      "暗态准确率_逐人平均_pct": 68.33333333333333,
+      "光暗差值_百分点": 19.74358974358975,
+      "光照正确条数": 281,
+      "暗态正确条数": 218,
+      "总测试条数": 319
+    },
+    {
+      "分类器": "Softmax逻辑回归",
+      "光照准确率_逐人平均_pct": 89.94391025641025,
+      "暗态准确率_逐人平均_pct": 65.52083333333333,
+      "光暗差值_百分点": 24.42307692307692,
+      "光照正确条数": 287,
+      "暗态正确条数": 209,
+      "总测试条数": 319
+    }
+  ],
+  "selection": "Train-only nested subject CV; all3classifiers and both conditions reported",
+  "scope": "Public-only database re-evaluation, not phone generalization or a new blind dataset",
+  "controls_ridge": {
+    "shared_2bit": {
+      "LIGHT": 89.00641025641025,
+      "DARK": 66.14583333333333
+    },
+    "dark_ideal_gain_compensation": {
+      "gain": 2.469806997863412,
+      "DARK": 88.70192307692308
+    },
+    "floating_readout": {
+      "LIGHT": 94.65544871794872,
+      "DARK": 93.09294871794872
+    },
+    "encoder_only": 90.88942307692308,
+    "light_reset_memory": 90.88942307692308,
+    "dark_reset_memory_2bit": 10.032051282051281
+  },
+  "measured_curated_description": {
+    "records": 250,
+    "phone": 79,
+    "watch": 171,
+    "LIGHT_correct": 216,
+    "DARK_correct": 151,
+    "scope": "Retrospectively selected/coordinate-explored development subset; not independent blind evaluation; raw personal data not released",
+    "public_only_softmax_training_records": 319,
+    "personal_training_records": 0
+  },
+  "historical_ridge_single_class_adaptation": {
+    "public_training_records": 319,
+    "personal_training_records": 10,
+    "development_holdout": 30,
+    "LIGHT_correct": 26,
+    "DARK_correct": 19,
+    "other_actions_diagnostic_records": 116,
+    "LIGHT_false_throw": 83,
+    "DARK_false_throw": 61,
+    "used_in_current_softmax": false
+  },
+  "public_source": {
+    "dataset": "UTD-MHAD first ten inertial classes",
+    "subjects": 8,
+    "records": 319,
+    "missing_trial": "a8_s1_t4_inertial.mat",
+    "url": "https://personal.utdallas.edu/~kehtar/UTD-MHAD.html"
+  }
+}

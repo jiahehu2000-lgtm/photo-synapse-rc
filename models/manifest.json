@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scope": "Full-public319 deployment; never score the same training319 as held-out benchmark",
+  "files": [
+    {
+      "file": "models/LIGHT_softmax_public319.npz",
+      "sha256": "627a3ddda6b668cbed1401075b3613939207644541b3e7501b67e38751905c10",
+      "bytes": 430698,
+      "C": 1,
+      "public_training_records": 319,
+      "personal_training_records": 0,
+      "features": 6000,
+      "classes": 10
+    },
+    {
+      "file": "models/DARK_softmax_public319.npz",
+      "sha256": "2688659e516ed5a921f574674341a28d97ff114156b7f78dca005af08d56e0d2",
+      "bytes": 373450,
+      "C": 0.0001,
+      "public_training_records": 319,
+      "personal_training_records": 0,
+      "features": 6000,
+      "classes": 10
+    }
+  ]
+}

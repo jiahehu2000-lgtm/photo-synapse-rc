@@ -1,0 +1,70 @@
+{
+  "completed": true,
+  "date": "2026-10-09",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "scikit_learn": "1.7.2",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "clean_virtual_environment_install": true,
+  "wheel_build_and_installed_smoke": true,
+  "unit_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "synthetic_demo": {
+    "completed": true,
+    "research_accuracy_reported": false
+  },
+  "real_mat_inference": {
+    "completed": true,
+    "public_training_record_used_only_for_smoke": true,
+    "predicted_class": 1
+  },
+  "full_retraining": [
+    {
+      "method": "softmax",
+      "checked_outer_predictions": 638,
+      "reference_predictions_match": true,
+      "folds": 16,
+      "reference_selection_and_scalers_match": true,
+      "max_reference_score_error": 0.0,
+      "fresh_training_seconds": 38.12398330005817
+    },
+    {
+      "method": "svm",
+      "checked_outer_predictions": 638,
+      "reference_predictions_match": true,
+      "folds": 16,
+      "reference_selection_and_scalers_match": true,
+      "max_reference_score_error": 0.0,
+      "fresh_training_seconds": 32.26307410001755
+    },
+    {
+      "method": "ridge",
+      "checked_outer_predictions": 638,
+      "reference_predictions_match": true,
+      "folds": 16,
+      "reference_selection_and_scalers_match": true,
+      "max_reference_score_error": 0.0,
+      "fresh_training_seconds": 16.69478560006246
+    }
+  ],
+  "public_files_private_path_scan_passed": true,
+  "original_research_files_not_modified": true,
+  "source_code_sha256": {
+    "src/photo_synapse_rc/cli.py": "5903eef6cae3ee93fe4e793d96fbe76045c95db3a73e5ab0623686a2db4e3e33",
+    "src/photo_synapse_rc/config.py": "e8a0c3eef40cf23ad5971597fc87c51e342b8cbb37bb138bc159b576a1d95059",
+    "src/photo_synapse_rc/core.py": "a4adb260cc19dd1f5b2d7d67b1caed1eb467e8c13a7d58e1ea3c4830147e3769",
+    "src/photo_synapse_rc/data.py": "74ab657ff38dc44bc20eb01e099b0391dd72dd2ff4230ace8fc191ca4baa1fa5",
+    "src/photo_synapse_rc/evaluation.py": "15cf840b139bfb3960a4e9797e011a3996bc9882c85303c07b0bff35e92e142d",
+    "src/photo_synapse_rc/inference.py": "187bd6b1539bda1644ff47c20fe69686f9a27d6e823b66bdf1f53cd93aa6603d",
+    "src/photo_synapse_rc/readout.py": "ff7f0a2f2312dae0ef51d9c567b106309b95ac39daa4e51570c7d78e6e383bcf",
+    "src/photo_synapse_rc/__init__.py": "8f8687f8ef3d165d668b07bcff07f875894945662eba808237521824cf53c32b",
+    "src/photo_synapse_rc/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a"
+  },
+  "scope": "Numerical/software validation; does not establish independent blind-test accuracy or hardware task inference."
+}

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "使用本仓库代码时请引用此软件，并分别引用UTD-MHAD数据集及相关论文。"
+type: software
+title: "PhotoSynapse-RC: Device-calibrated photo/dark reservoir simulation"
+authors:
+  - family-names: Hu
+    given-names: Jiahe
+version: 0.1.0
+date-released: '2026-10-09'
+url: "https://github.com/jiahehu2000-lgtm/photo-synapse-rc"
+repository-code: "https://github.com/jiahehu2000-lgtm/photo-synapse-rc"
+license: MIT

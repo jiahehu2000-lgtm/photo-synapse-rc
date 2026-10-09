@@ -1,0 +1,6 @@
+# Numerical environment used for the original retained runs and this release.
+numpy==2.4.6
+scipy==1.15.3
+scikit-learn==1.7.2
+threadpoolctl==3.6.0
+joblib==1.5.2
