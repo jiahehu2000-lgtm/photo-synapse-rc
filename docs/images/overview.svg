@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="410" viewBox="0 0 1400 410" role="img" aria-labelledby="title desc">
+  <title id="title">PhotoSynapse-RC 流程示意</title>
+  <desc id="desc">动作的六轴时序离线转换成40步，固定编码形成150路事件，输入冻结光暗器件模型，读取6000维特征，训练数字读出输出10类动作标签。本图为流程示意，不是实测曲线。</desc>
+  <rect width="1400" height="410" rx="24" fill="#0d2530"/>
+  <g font-family="Segoe UI,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+    <text x="54" y="62" fill="#88e7c5" font-size="20" letter-spacing="3">PHOTOSYNAPSE-RC · DEVICE-MODEL SIMULATION</text>
+    <text x="54" y="117" fill="#ffffff" font-size="38" font-weight="700">固定“水池”，训练读懂波纹的“观察者”。</text>
+    <text x="54" y="155" fill="#b7d1d6" font-size="22">中文图解 · 离线演示 · 公共数据库复现 · 光照 / 暗态对比</text>
+    <g transform="translate(54,201)">
+      <rect width="220" height="120" rx="14" fill="#173d49" stroke="#326171"/>
+      <text x="20" y="39" fill="#ffffff" font-size="23" font-weight="600">动作输入</text>
+      <text x="20" y="74" fill="#c6dce0" font-size="20">六轴惯性时序</text>
+      <text x="20" y="101" fill="#90c7d3" font-size="18">离线统一为 40 × 6</text>
+    </g>
+    <g transform="translate(320,201)">
+      <rect width="220" height="120" rx="14" fill="#173d49" stroke="#326171"/>
+      <text x="20" y="39" fill="#ffffff" font-size="23" font-weight="600">固定编码</text>
+      <text x="20" y="74" fill="#c6dce0" font-size="20">投影 / 阈值 / XOR</text>
+      <text x="20" y="101" fill="#90c7d3" font-size="18">150 路事件序列</text>
+    </g>
+    <g transform="translate(586,201)">
+      <rect width="220" height="120" rx="14" fill="#134b45" stroke="#48998a"/>
+      <text x="20" y="39" fill="#ffffff" font-size="23" font-weight="600">器件“水池”</text>
+      <text x="20" y="74" fill="#c8f0e4" font-size="20">冻结光照 / 暗态模型</text>
+      <text x="20" y="101" fill="#9bdac8" font-size="18">独立三指数衰减支路</text>
+    </g>
+    <g transform="translate(852,201)">
+      <rect width="220" height="120" rx="14" fill="#173d49" stroke="#326171"/>
+      <text x="20" y="39" fill="#ffffff" font-size="23" font-weight="600">读取状态</text>
+      <text x="20" y="74" fill="#c6dce0" font-size="20">共同 2-bit 读取</text>
+      <text x="20" y="101" fill="#90c7d3" font-size="18">150 × 40 = 6000 特征</text>
+    </g>
+    <g transform="translate(1118,201)">
+      <rect width="228" height="120" rx="14" fill="#134b45" stroke="#48998a"/>
+      <text x="20" y="39" fill="#ffffff" font-size="23" font-weight="600">训练“观察者”</text>
+      <text x="20" y="74" fill="#c8f0e4" font-size="20">数字读出分类器</text>
+      <text x="20" y="101" fill="#9bdac8" font-size="18">输出 10 类动作标签</text>
+    </g>
+    <g stroke="#88e7c5" stroke-width="3" fill="none">
+      <path d="M 286 260 H 308 M 299 252 L 309 260 L 299 268"/>
+      <path d="M 552 260 H 574 M 565 252 L 575 260 L 565 268"/>
+      <path d="M 818 260 H 840 M 831 252 L 841 260 L 831 268"/>
+      <path d="M 1084 260 H 1106 M 1097 252 L 1107 260 L 1097 268"/>
+    </g>
+    <text x="54" y="368" fill="#b7d1d6" font-size="18">示意图：器件模型驱动的软件仿真；分类训练不改变前面的器件模型。</text>
+  </g>
+</svg>

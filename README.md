@@ -1,16 +1,43 @@
 # PhotoSynapse-RC：光暗突触器件模型驱动的储备池计算
 
+[![自动检查](https://github.com/jiahehu2000-lgtm/photo-synapse-rc/actions/workflows/tests.yml/badge.svg)](https://github.com/jiahehu2000-lgtm/photo-synapse-rc/actions/workflows/tests.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![中文教程](https://img.shields.io/badge/教程-中文-008577)](docs/原理与流程.md)
+[![GitHub stars](https://img.shields.io/github/stars/jiahehu2000-lgtm/photo-synapse-rc?style=social)](https://github.com/jiahehu2000-lgtm/photo-synapse-rc/stargazers)
+
+**用“水池与观察者”理解 RC，再用开源代码跑通：动作信号 → 器件记忆模型 → 动作标签。**
+
+![PhotoSynapse-RC 器件模型驱动仿真流程示意](docs/images/overview.svg)
+
+[先看中文图解](docs/原理与流程.md) · [安装与复现](docs/复现与使用.md) · [结果及适用范围](docs/科学表述与评价范围.md)
+
 将本研究的非拉伸器件响应抽象为固定数学模型，用真实六轴动作信号驱动模型，训练最后的数字分类器，比较光照与暗态条件下的分类结果。本仓库提供可独立运行的 Python 代码、冻结参数、公开数据清单、公共数据库训练的部署模型及中文说明。
+
+如果代码或中文讲解对你有帮助，欢迎点一个 **⭐ Star**。遇到问题可以提交 [Issue](https://github.com/jiahehu2000-lgtm/photo-synapse-rc/issues)，说明运行环境、命令与报错。
+
+## 这个仓库能让你做什么
+
+| 你的目标 | 入口 |
+|---|---|
+| 我还不熟悉 RC，想先看懂 | [水池比喻、模型大小与流程](docs/原理与流程.md) |
+| 不下载数据库，先把程序跑起来 | `python -m photo_synapse_rc demo --output outputs/demo`：离线合成输入演示 |
+| 重现真实动作的公共数据库评价 | 下载 UTD-MHAD 惯性数据后执行 `evaluate`，保存逐条预测与混淆矩阵 |
+| 比较读出分类器 | 支持 Softmax、线性 SVM 与岭回归；前面的器件模型固定 |
+| 检查结论能支持到哪里 | [指标定义、读取精度与评价范围](docs/科学表述与评价范围.md) |
+
+下面先解释流程，再给出安装命令。完整公共评价需要另行下载数据；离线演示只检验流程，不报告研究准确率。
+
+## 为什么是“水池与观察者”？
 
 可以把它想成“水池与观察者”：输入刺激像连续落入水池的石头，衰减状态像尚未消失的波纹。这里的水池由器件测量校准的数学模型模拟；训练的是根据波纹判断动作的观察者，即读出分类器。
 
 ```mermaid
 flowchart LR
-    A["一次真实动作\n六轴惯性时序"] --> B["40步离线预处理\n40 × 6"]
-    B --> C["固定投影与阈值\n150路时间XOR事件"]
-    C --> D["冻结光照/暗态器件模型\n150路 · 450内部状态"]
-    D --> E["共同2-bit读取\n150 × 40 = 6000特征"]
-    E --> F["训练数字Softmax读出\n10个类别分数"]
+    A["一次真实动作<br/>六轴惯性时序"] --> B["40步离线预处理<br/>40 × 6"]
+    B --> C["固定投影与阈值<br/>150路时间XOR事件"]
+    C --> D["冻结光照/暗态器件模型<br/>150路 · 450内部状态"]
+    D --> E["共同2-bit读取<br/>150 × 40 = 6000特征"]
+    E --> F["训练数字Softmax读出<br/>10个类别分数"]
     F --> G["输出动作标签"]
 ```
 
@@ -79,3 +106,7 @@ docs/                 中文方法与使用说明
 冻结模型参数可用于完整 RC 流程复现。原器件校准原始曲线、私人手机／手表记录和完整 Origin 工程没有随仓库重新分发，因此本仓库没有声称可从未公开的原始器件测量重新拟合参数。仓库不修改原研究工程。
 
 本仓库代码、中文说明和拟合模型采用 [MIT 许可](LICENSE)。UTD-MHAD 与引用论文遵循各自来源的使用条款。
+
+## 把科研结果画成图
+
+另一个独立项目 [Origin Scientific Plotting](https://github.com/jiahehu2000-lgtm/origin-scientific-plotting) 提供调用本机 Origin 的 Skill：原生工程、矢量图及可编辑 PPT。将本仓库输出按它的绘图规格整理后，可以交给该工具绘制。它需要 Windows 和本机 Origin；本仓库的 RC 计算本身不依赖 Origin。
